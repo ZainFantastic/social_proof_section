@@ -1,16 +1,23 @@
 :root
 {
 /* primery color */
---dark-magenta:hsl(300, 43%, 22%);
---light-gray-mag:hsl(300, 24%, 96%);
---white:hsl(0, 0%, 100%);
+--dark-magenta:#502050;
+--dark-gray-mag:#937b92;
 
 /* secondery colors */
---soft-pink:hsl(333, 80%, 67%);
---dark-gray-mag:hsl(303, 10%, 53%);
+--soft-pink:#ee68a4;
+--light-gray-mag:#f7f2f7;
+--white:#ffffff;
 
 /* fonts */
 --font-reg:'Spartan', sans-serif;
+--reg:400;
+--semi-bold:500;
+--bold:700;
+
+/* padding */
+--padding:8rem;
+--margin:5rem;
 }
 
 
@@ -37,45 +44,3 @@
   grid-template-columns: repeat(auto-fit, minmax(300px , 1fr));
 }
 
-
-/* container */
- /* "place it inside the parent for the contents, not outside the parent*/
-.container{ 
-  padding-right: var(--padding);
-  padding-left: var(--padding);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* small screen */
-@media all and (min-width:768px){
-
-  .container{
-    width:750px;
-  }
-}
-
-/* medium*/
-@media all and (min-width:992px){
-
-  .container{
-    width:970px;
-  }
-}
-
-/* large */
-@media all and (min-width:1200px){
-
-  .container{
-    width:1170px;
-  }
-
-  
-/* extra large */
-@media all and (min-width:1400px){
-
-  .container{
-    width:1320px;
-  }
-}
-}
