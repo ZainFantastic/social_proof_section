@@ -1,0 +1,266 @@
+*
+{
+  box-sizing:border-box;
+}
+
+body
+{
+  width: calc(100vw - 30px);
+  margin:0px;
+  padding:30px;
+  font-size:15px;
+  font-family:var(--font-reg);
+  background-color:var(--white);
+  background:url(/images/bg-pattern-top-desktop.svg) no-repeat fixed top left , url(/images/bg-pattern-bottom-mobile.svg) no-repeat fixed bottom right;
+  background-size:100% , 100%;
+  display:grid;
+  grid-gap:40px;
+  grid-template-rows:repeat(2 , 1fr) 2fr;
+  grid-template-columns:1fr;
+  grid-template-areas:
+  "intro"
+  "rating"
+  "comments";
+}
+
+h1 , h4 , p
+{
+  margin:0px;
+  padding:0px;
+  text-transform:capitalize;
+}
+
+ /* MOBILE & TABLET 375px - 700px */
+
+/* intro  */
+.intro
+{
+  width:100%;
+  height:100%;
+  grid-area:intro;
+}
+  .intro>h1
+  {
+    margin-top:100px;
+    margin-bottom:35px;
+    font-size:2.5em;
+    font-weight:700;
+    color:var(--dark-magenta);
+    text-align:center;
+    text-transform:lowercase;
+  }
+  .intro>p
+  {
+    font-size:1.1em;
+    line-height:30px;
+    word-spacing:2.5px;
+    color:var(--dark-gray-mag);
+    text-align:center;
+  }
+
+ /* rating */
+.rating
+{
+  width:100%;
+  height:100%;
+  grid-area:rating;
+  display:flex;
+  flex-flow:column wrap;
+  align-items:center;
+  justify-content:center;
+}
+  .small-card
+  {
+    width:100%;
+    min-height:100px;
+    padding:15px;
+    margin-bottom:20px;
+    background-color:var(--light-gray-mag);
+    border-radius:10px;
+    display:flex;
+    flex-flow:column wrap;
+    align-items:center;
+    justify-content: space-around;
+  }
+    .small-card>p
+    {
+      color:var(--dark-magenta);
+      font-size:1.2em;
+      font-weight:800;
+      text-align:center;
+    }
+    .stars
+    {
+      width: 50%;
+      margin-bottom:15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+      .stars>img
+      {
+        width:20px;
+        height:20px;
+      }
+
+/* comments */
+.comments
+{
+  width:100%;
+  height:100%;
+  grid-area:comments;
+  display: grid;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-columns: 100%;
+  grid-gap:15px;
+}
+  .large-card
+  {
+    width:100%;
+    height:100%;
+    padding: 40px 40px;
+    background-color:var(--dark-magenta);
+    border-radius: 15px;
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+    justify-content: flex-start;
+  }
+    .user-pic
+    {
+      width:30%;
+    }
+      .user-pic>img
+      {
+        width:50px;
+        height:50px;
+        border-radius:50%;
+      }
+    .user-name
+    {
+      padding-top:20px;
+      margin-bottom:20px;
+      color:whitesmoke;
+      font-weight:500;
+      letter-spacing:1px;
+      line-height:25px;
+    }
+      .user-name>span
+      {
+        color:var(--soft-pink);
+        font-size:90%;
+      }
+    .large-card>p
+    {
+      color:whitesmoke;
+      font-weight:300;
+      font-size:0.8em;
+      line-height: 25px;
+    }
+
+                            /* DESKTOP */
+
+@media all and (min-width:900px)
+{
+
+  body
+  {
+    position: relative;
+    padding:100px;
+    display:grid;
+    grid-gap:100px;
+    grid-template-columns:repeat(4 , 1fr);
+    grid-template-rows:repeat(2 , 1fr);
+    grid-template-areas: 
+    "intro intro  rating rating"
+    "comments comments comments comments ";
+  }
+
+ /* intro */
+  .intro>h1
+  {
+    font-size:5em ;
+    text-align:left;
+  }
+  .intro>p
+  {
+    font-size:1.6em;
+    text-align: left;
+    line-height:45px;
+  }
+
+/* rating */ 
+  .rating
+  {
+    height: 100%;
+  }                                          
+    .small-card
+    {
+      width: 90%;
+      min-height:150px;
+      flex-flow:row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+      .small-card>p
+      {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .stars
+      {
+        margin: 0px 30px;
+        width: 35%;
+        height: 100%;
+        justify-content: space-evenly;
+      }
+    .rating .one
+    {
+      align-self: flex-start;
+    }
+    .rating .three
+    {
+      align-self: flex-end;
+    }
+
+    /* comments */
+  .comments
+  {
+    display: grid;
+    grid-gap:30px;
+    place-items: center;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: 100%;
+  }
+  .large-card
+  {
+    width:100%;
+    height: 70%;
+    border-radius: 10px;
+  }
+    .large-card>p
+    {
+      width:90%;
+      word-spacing: 3px;
+      font-size:100%;
+      line-height:35px ;
+    }
+    .user-pic
+    {
+      width:20%;
+    }
+    .user-pic>img
+    {
+      width:60px;
+      height:60px;
+    }
+    .user-name
+    {
+      font-size:110% ;
+      padding:5px 5px 5px 10px;
+      margin: 0px;
+    }
+  
+}
